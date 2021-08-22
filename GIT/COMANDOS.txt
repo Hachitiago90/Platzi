@@ -1,3 +1,4 @@
+
 git log --oneline - Te muestra el id commit y el título del commit.
 git log --decorate- Te muestra donde se encuentra el head point en el log.
 git log --stat - Explica el número de líneas que se cambiaron brevemente.
@@ -15,3 +16,8 @@ git log --grep=“INVIE” –i- Busca los commits que cumplan sin importar may�
 git log – index.html- Busca los commits en un archivo en específico.
 git log -S “Por contenido”- Buscar los commits con el contenido dentro del archivo.
 git log > log.txt - guardar los logs en un archivo txt
+
+
+git config -l  - Muestra la configuracion basica del git, usuario y demàs
+git config --global user.email "email a usar"  --Comando para cambiar la configuraciòn del correo asociado a git.
+
