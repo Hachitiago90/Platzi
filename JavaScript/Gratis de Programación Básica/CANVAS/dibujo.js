@@ -1,7 +1,11 @@
 //Variables locales
-var d       = document.getElementById("dibujito");
+var d           = document.getElementById("dibujito");
+var texto       = document.getElementById("txt_lineas");
+var boton       = document.getElementById("botonP");
+
+boton.addEventListener("click", dibujarPorClick); //dibujarPorClick - Referencia, dibujarPorClick() llamado del metodo
 var lienzo  = d.getContext("2d"); //Existe contexto 2d y 3d
-var lineas  = 30;
+var lineas  = parseInt(texto.value);
 var l       = 0;
 var maximo = 300;
 var minimo = 0;
@@ -35,15 +39,10 @@ do{
 }while(l < lineas);
 
 
-
-
 dibujarLinea(colorB, maximo,maximo,minimo,maximo);
 dibujarLinea(colorB, minimo,minimo,minimo,maximo);
 dibujarLinea(colorB, maximo,minimo,maximo,maximo);
 dibujarLinea(colorB, minimo,minimo,maximo,minimo);
-
-
-
 dibujarLinea(colorE,0,300,10,0);
 dibujarLinea(colorE,0,290,20,0);
 dibujarLinea(colorE,0,290,20,0);
@@ -52,7 +51,13 @@ dibujarLinea(colorE,0,290,20,0);
 
 
 
+function dibujarPorClick(){
+  var x = parseInt(texto.value);
+  alert("Estas dibujando.");
 
+
+
+}
 function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal){
   lienzo.beginPath();  //Funciòn que arranca un dibujo.
   lienzo.strokeStyle = color ; //se pone atributo de objeto lienzo.
@@ -60,4 +65,5 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal){
   lienzo.lineTo(xfinal,yfinal);
   lienzo.stroke(); //Trazar una raya
   lienzo.closePath();//Funciòn que cierra un dibujo
+
 }
